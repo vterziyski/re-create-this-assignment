@@ -3,22 +3,30 @@
     --primary-color: #D95650;
     --secondary-color: #DD6862;
     --dark-color: #BC5853;
+
+    /*fonts*/
+
+    --primary-font:'Quicksand', sans-serif;
+    --secondary-font: 'Varela Round', sans-serif;;
 }
 
 /*navbar*/
 nav {
-    display: inline-block;
     border-bottom: 1px solid var(--dark-color);
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: auto;
+    grid-column: 2/3;
+    margin-top: 0;
 }
 
 #logo {
     font-size: 1.6rem;
     margin-top: 1.5rem;
+    font-family: var(--primary-font);
 }
+
 
 #logo svg {
     color: white;
@@ -32,6 +40,7 @@ nav ul li {
     background-color: var(--secondary-color);
     width: 5rem;
     text-align: center;
+    font-family: var(--secondary-font);
 }
 
 a {
@@ -47,16 +56,31 @@ svg {
 
 /*body*/
 
-body {
+main {
     background-color: var(--primary-color);
+    height: 50rem;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.timer ul li:first-child {
+    background-color: var(--dark-color);
+    padding: 5px;
+    border-radius: 4px;
+    font-family: var(--primary-font);
+    width: 5.5rem;
 }
 
 .timer {
-    margin: auto;
-    width: 40rem;
+    width: 35rem;
     text-align: center;
     background-color: var(--secondary-color);
-    height: 22rem;
+    height: 23rem;
+    border-radius: 6px;
+    grid-column: 2/3;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .timer ul li {
@@ -65,8 +89,50 @@ body {
     text-align: center;
     justify-content: space-around;
     padding: 25px;
-    margin-right: 2.2rem;
+    margin-right: 1rem;
+    color: white;
+    font-family: var(--secondary-font);
 }
 .time {
-    font-size: 5rem;
+    font-size: 8rem;
+    font-family: var(--primary-font);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white;
+}
+
+button {
+    padding: 0px 10px;
+    background-color: white;
+    width: 12rem;
+    height: 55px;
+    margin: auto;
+    margin-top: 0.8rem;
+    border-radius: 5px;
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    box-shadow: lightgrey 0px 6px 0px 0px;
+    color: var(--primary-color);
+    border: none;
+}
+
+.time-to-focus {
+    text-align: center;
+    color: white;
+    line-height: 0.5rem;
+    font-family: var(--secondary-font);
+    grid-column: 2/3;
+}
+
+.time-to-focus p:first-child {
+    opacity: 50%;
+}
+
+.tasks {
+    text-align: center;
+}
+
+.tasks-title {
+    display: flex;
+    justify-content: space-around;
 }
