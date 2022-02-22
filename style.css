@@ -6,13 +6,12 @@
     --opacity-white: rgba(255, 255, 255, 0.548);
 
     /*fonts*/
-
+    --font-color-text1: #4c1a1db4;
+    --font-color-text: #4C1A1D;
     --primary-font:'Quicksand', sans-serif;
     --secondary-font: 'Varela Round', sans-serif;;
 }
-html {
-    background-color: var(--primary-color);
-}
+
 /*navbar*/
 nav {
     border-bottom: 1px solid var(--dark-color);
@@ -57,14 +56,26 @@ nav svg {
     
 }
 
-/*body*/
+body {
+    height: auto;
+    background: linear-gradient(
+        to bottom,
+        var(--primary-color)0rem,
+        var(--primary-color)50rem,
+        white 50rem,
+        white 100rem
+    );
+}
 
 main {
-    height: 60rem;
     width: 100%;
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: auto;
+}
+
+.container {
+    grid-column: 2/3;
 }
 
 .timer ul li:first-child {
@@ -72,7 +83,6 @@ main {
     padding: 5px;
     border-radius: 4px;
     font-family: var(--primary-font);
-    width: 5.5rem;
 }
 
 .timer {
@@ -93,6 +103,7 @@ main {
     margin-right: 1rem;
     color: white;
     font-family: var(--secondary-font);
+    cursor: pointer;
 }
 .time {
     font-size: 8rem;
@@ -139,9 +150,9 @@ button {
 }
 
 .tasks-title {
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    grid-column: 2/3;
     width: 30rem;
     font-family: var(--secondary-font);
     color: white;
@@ -161,6 +172,7 @@ button {
 }
 
 .add-task {
+    margin: auto;
     display: flex;
     color: var(--opacity-white);
     justify-content: center;
@@ -171,9 +183,158 @@ button {
     align-items: center;
     margin-top: 1rem;
     border: 2px dashed var(--opacity-white);
+    width: 28.5rem;
 }
 
 .add-task svg {
     margin-right: 5px;
 }
 
+/*text*/
+
+.text {
+    grid-column: 2/3;
+    width: 38rem;
+    margin: auto;
+    margin-top: 8rem;
+}
+
+.text h1 {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--font-color-text);
+}
+.text h2 {
+    font-family: var(--secondary-font);
+    color: var(--font-color-text);
+}
+
+.text h2:after {
+    content: '';
+    display: block;
+    width: 1.3rem;
+    border-bottom: 4px solid #dd6561b6;
+    margin-top: 4px;
+}
+
+.text p, ul li, ol li {
+    font-family: var(--secondary-font);
+    line-height: 1.8rem;
+    color: var(--font-color-text1);
+    
+}
+
+
+.text a, footer a {
+    color: var(--primary-color);
+    opacity: 100%;
+    font-weight: bold;
+}
+
+
+.text ul li {
+    color: var;
+}
+
+.text ul {
+    list-style: none;
+}
+
+.text ul li::before {
+    content: '•';
+    color: var(--primary-color) ;
+    display: inline-block; width: 1em;
+    margin-left: -1em;
+    font-size: 1.2rem;
+}
+
+/*footer*/
+
+footer {
+    text-align: center;
+    margin-top: 10vh;
+    border-top: 2px solid rgba(128, 128, 128, 0.123);
+}
+
+footer ul li {
+    display: inline-flex;
+    align-content: space-between;
+    font-weight: bold;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+footer svg {
+    opacity: 40%;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+footer p {
+    font-family: var(--secondary-font);
+    color: var(--font-color-text1);
+}
+
+footer p:nth-of-type(2n) {
+    color: grey;
+    font-size: 12px;
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 835px) {
+    nav {
+        text-align: center;
+        grid-column: 1/4;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 50% 50%;
+        justify-content: center;
+    }
+    main {
+        display: unset;
+    }
+    #logo {
+        margin: auto;
+    }
+    .time {
+        font-size: 10vh;
+    }
+    .tasks {
+        width: 100%;
+    }
+    .tasks-title, .add-task {
+        width: 70%;
+    }
+    .timer { 
+       width: 80vw;
+       height: 40vh;
+    }
+    .timer ul li {
+        margin-right: 0;
+        padding: 5%;
+        
+    }
+    .text p, .text ul li, .text ol li {
+        font-size: 2vh;
+    }
+    .text h1{ 
+        font-size: 4vh
+    }
+    .text h2 {
+        font-size: 3vh;
+    }
+    .text {
+        width: 100%;
+       margin-top: 13rem;
+    }
+}
+@media only screen and (max-width: 490px) {
+    .timer ul {
+        padding: 0;
+        text-align: center;
+    }
+    .timer ul li:first-child {
+        padding: 3px;
+    }
+}
