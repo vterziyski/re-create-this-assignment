@@ -337,5 +337,6 @@ footer p:nth-of-type(2n) {
     .timer ul li:first-child {
         padding: 3px;
         margin-left: 15px;
+        
     }
 }
